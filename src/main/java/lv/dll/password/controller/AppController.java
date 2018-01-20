@@ -14,17 +14,6 @@ import lv.dll.password.model.Password;
 
 @RestController
 public class AppController {
-
-	@RequestMapping(value = "/erroris", method = RequestMethod.GET, produces = "application/json")
-	public Object generateErrorResponse()
-	{
-		return Collections.singletonMap("password", "Error");
-	}
-	
-	@GetMapping("/doit")
-	public String doIt() {
-		return "Do it";
-	}
 	
 	@RequestMapping(value = "/{type}/{size}", method = RequestMethod.GET, produces = "application/json")
 	public Object generatePassword(@PathVariable(value = "type") int type, @PathVariable(value = "size") int size)
